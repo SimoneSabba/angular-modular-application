@@ -1,16 +1,16 @@
 'use strict';
 // Controller naming conventions should start with an uppercase letter
-function PostCtrl($scope, $state, ServiceName, Utilities) {
+function PostCtrl($scope, $state, FlickrService, Utilities) {
 
-    $scope.getAuthorPage = ServiceName.getAuthorPage;
-    $scope.item = ServiceName.getItem();
+    $scope.getAuthorPage = FlickrService.getAuthorPage;
+    $scope.item = FlickrService.getItem();
 
     if (_.isNull($scope.item)) {
         $state.go('home');
     } else {
         $scope.tags = _.isString($scope.item.tags) ? $scope.item.tags.split(' ') : [];
         $scope.date = Utilities.formatDate($scope.item.published);
-        $scope.authorPageLink = ServiceName.getAuthorPage($scope.item.author_id);
+        $scope.authorPageLink = FlickrService.getAuthorPage($scope.item.author_id);
     }
 
     $scope.goBack = function() {
@@ -20,5 +20,5 @@ function PostCtrl($scope, $state, ServiceName, Utilities) {
 
 }
 
-PostCtrl.$inject = ['$scope', '$state', 'ServiceName', 'Utilities'];
+PostCtrl.$inject = ['$scope', '$state', 'FlickrService', 'Utilities'];
 module.exports = PostCtrl;

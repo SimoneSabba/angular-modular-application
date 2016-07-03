@@ -1,6 +1,6 @@
 'use strict';
 
-var ServiceName = function($http, $q, CONSTANTS) {
+var FlickrService = function($http, $q, CONSTANTS) {
     this.item = null;
     var data = {
             method: 'JSONP',
@@ -31,5 +31,5 @@ var ServiceName = function($http, $q, CONSTANTS) {
     };
 };
 
-ServiceName.$inject = ['$http', '$q', 'CONSTANTS'];
-module.exports = ServiceName;
+FlickrService.$inject = ['$http', '$q', 'CONSTANTS'];
+module.exports = FlickrService;
