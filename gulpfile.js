@@ -119,7 +119,7 @@ gulp.task('server', function() {
     connect.server({
         root: filePath.build.dest,
         fallback: filePath.build.dest + '/index.html',
-        port: 5003,
+        port: 5000,
         livereload: true
         // ,
         // middleware: function(connect, o) {
