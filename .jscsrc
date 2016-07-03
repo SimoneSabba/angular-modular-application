@@ -2,7 +2,7 @@
     "disallowKeywords": ["with"],
     "disallowKeywordsOnNewLine": ["else"],
     "disallowMixedSpacesAndTabs": true,
-    "disallowMultipleVarDecl": "exceptUndefined",
+//    "disallowMultipleVarDecl": "exceptUndefined",
     "disallowNewlineBeforeBlockStatements": true,
     "disallowQuotedKeysInObjects": true,
     "disallowSpaceAfterObjectKeys": true,
@@ -11,8 +11,8 @@
         "beforeOpeningRoundBrace": true
     },
     "disallowSpacesInsideParentheses": true,
-    "disallowTrailingWhitespace": true,
-    "requireCamelCaseOrUpperCaseIdentifiers": true,
+//    "disallowTrailingWhitespace": true,
+//    "requireCamelCaseOrUpperCaseIdentifiers": true,
     "requireCapitalizedConstructors": true,
     "requireCurlyBraces": true,
     "requireSpaceAfterKeywords": [

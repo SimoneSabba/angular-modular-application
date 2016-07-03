@@ -17,9 +17,9 @@
             </a>
             <div class="media-body">
                 <h4 class="flr-truncate flr-pointer media-heading" ng-click="goToPost(item)">{{item.title}}</h4>
-                <p>Published: {{item.published | date:"MMM yyyy 'at' hh:mm"}}</p>
+                <p>Published: {{formatDate(item.published)}}</p>
                 <ul class="list-inline list-unstyled">
-                    <li><a ng-href="{{getAuthorPage(item.author_id)}}" target="_blank">Author</a></li>
+                    <li><a ng-href="{{getAuthorPage(item.author_id)}}" target="_blank">{{item.author}}</a></li>
                     <li><a ng-href="{{item.link}}" target="_blank">View on Flickr</a></li>
                 </ul>
             </div>

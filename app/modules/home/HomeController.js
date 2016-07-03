@@ -1,9 +1,12 @@
 'use strict';
 // Controller naming conventions should start with an uppercase letter
-function HomeCtrl($scope, $state, $http, ServiceName) {
+function HomeCtrl($scope, $state, $http, ServiceName, Utilities) {
 
     $scope.loaded = false;
     $scope.getAuthorPage = ServiceName.getAuthorPage;
+    $scope.formatDate = function(date){
+        return Utilities.formatDate(date)
+    };
 
     ServiceName.getData().then(function(list) {
         $scope.list = list;
@@ -18,5 +21,5 @@ function HomeCtrl($scope, $state, $http, ServiceName) {
 }
 
 // $inject is necessary for minification. See http://bit.ly/1lNICde for explanation.
-HomeCtrl.$inject = ['$scope', '$state', '$http', 'ServiceName'];
+HomeCtrl.$inject = ['$scope', '$state', '$http', 'ServiceName', 'Utilities'];
 module.exports = HomeCtrl;
