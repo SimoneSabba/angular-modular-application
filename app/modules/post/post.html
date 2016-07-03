@@ -1,0 +1,39 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1><a ng-href="{{item.link}}" target="_blank">{{item.title}}</a></h1>
+        </div>
+        <div class="col-md-4 text-right">
+            <button ng-click="goBack()">Go back</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <ul class="list-inline">
+                <li><a ng-href="{{getAuthorPage(item.author_id)}}" target="_blank">Author</a></li>
+                <li>|</li>
+                <li>Published: {{item.published | date:"MMM yyyy 'at' hh:mm"}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="well">
+            <div class="media">
+                <a class="pull-left" ng-click="goToPost(item)" >
+                    <img class="flr-pointer media-object" ng-src="{{item.media.m}}">
+                </a>
+                <div class="media-body">
+                    <p ng-bind-html="item.description"></p>
+                    <ul class="list-inline list-unstyled">
+                        <li><a ng-href="{{getAuthorPage(item.author_id)}}" target="_blank">Author</a></li>
+                        <li><a ng-href="{{item.link}}" target="_blank">View on Flickr</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "row">
+        <span class="label label-primary glyphicon glyphicon-tag" ng-repeat="tag in tags">{{tag}}</span>
+    </div>
+</div>

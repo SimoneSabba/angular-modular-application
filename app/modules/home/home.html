@@ -1,0 +1,28 @@
+<!--<div class="modules-home-view">-->
+    <!--<div class="module-header">-->
+        <!--<h1>My list</h1>-->
+        <!--<button ng-click="openDetail()">Go to detail</button>-->
+    <!--</div>-->
+<!--</div>-->
+<div class="loading" ng-show="!loaded">
+    Loading.....
+    <span class="ball1"></span>
+    <span class="ball2"></span>
+</div>
+<div ng-show="loaded" class="container">
+    <div class="well" ng-repeat="item in list.items track by $index">
+        <div class="media">
+            <a class="pull-left" ng-click="goToPost(item)" >
+                <img class="flr-img flr-pointer media-object" ng-src="{{item.media.m}}">
+            </a>
+            <div class="media-body">
+                <h4 class="flr-truncate flr-pointer media-heading" ng-click="goToPost(item)">{{item.title}}</h4>
+                <p>Published: {{item.published | date:"MMM yyyy 'at' hh:mm"}}</p>
+                <ul class="list-inline list-unstyled">
+                    <li><a ng-href="{{getAuthorPage(item.author_id)}}" target="_blank">Author</a></li>
+                    <li><a ng-href="{{item.link}}" target="_blank">View on Flickr</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
