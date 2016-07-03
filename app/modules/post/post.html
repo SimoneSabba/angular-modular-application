@@ -5,35 +5,33 @@
             <h1><a ng-href="{{item.link}}" target="_blank">{{item.title}}</a></h1>
         </div>
         <div class="col-md-4 text-right">
-            <button ng-click="goBack()">Go back</button>
+            <button type="button" class="btn btn-primary" ng-click="goBack()">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                Back
+            </button>
+            <!--<button ng-click="goBack()">Go back</button>-->
         </div>
     </div>
     <div class="row">
         <div class="col-md-8">
             <ul class="list-inline">
-                <li><a ng-href="{{getAuthorPage(item.author_id)}}" target="_blank">Author</a></li>
+                <li><a ng-href="{{authorPageLink}}" target="_blank">{{item.author}}</a></li>
                 <li>|</li>
-                <li>Published: {{item.published | date:"MMM yyyy 'at' hh:mm"}}</li>
+                <li>Published: {{date}}</li>
             </ul>
         </div>
     </div>
     <div class="row">
         <div class="well">
             <div class="media">
-                <a class="pull-left" ng-click="goToPost(item)" >
-                    <img class="flr-pointer media-object" ng-src="{{item.media.m}}">
-                </a>
+                <img class="media-object  pull-left" ng-src="{{item.media.m}}">
                 <div class="media-body">
                     <p ng-bind-html="item.description"></p>
-                    <ul class="list-inline list-unstyled">
-                        <li><a ng-href="{{getAuthorPage(item.author_id)}}" target="_blank">Author</a></li>
-                        <li><a ng-href="{{item.link}}" target="_blank">View on Flickr</a></li>
-                    </ul>
                 </div>
             </div>
         </div>
     </div>
     <div class = "row">
-        <span class="label label-primary glyphicon glyphicon-tag" ng-repeat="tag in tags">{{tag}}</span>
+        <span class="label label-primary fa fa-tag" ng-repeat="tag in tags">{{tag}}</span>
     </div>
 </div>
