@@ -1,5 +1,5 @@
 'use strict';
-// Controller naming conventions should start with an uppercase letter
+
 function PostCtrl($scope, $state, FlickrService, Utilities) {
 
     $scope.getAuthorPage = FlickrService.getAuthorPage;

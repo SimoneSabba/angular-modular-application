@@ -1,5 +1,5 @@
 'use strict';
-// Controller naming conventions should start with an uppercase letter
+
 function HomeCtrl($scope, $state, $http, FlickrService, Utilities) {
 
     $scope.loaded = false;
@@ -20,6 +20,5 @@ function HomeCtrl($scope, $state, $http, FlickrService, Utilities) {
     };
 }
 
-// $inject is necessary for minification. See http://bit.ly/1lNICde for explanation.
 HomeCtrl.$inject = ['$scope', '$state', '$http', 'FlickrService', 'Utilities'];
 module.exports = HomeCtrl;
