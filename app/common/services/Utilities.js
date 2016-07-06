@@ -14,8 +14,8 @@ var Utilities = function($filter, CONSTANTS) {
         return number + suffix;
     };
     this.formatDate = function(date, options) {
-        var options = _.isObject(options) ? options : {},
-            format = options.format || CONSTANTS.FORMAT_DATE_DEFAULT;
+        var opt = _.isObject(options) ? options : {},
+            format = opt.format || CONSTANTS.FORMAT_DATE_DEFAULT;
 
         if (_.isNull(date) || _.isUndefined(date)) {
             return;
