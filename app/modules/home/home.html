@@ -1,9 +1,3 @@
-<!--<div class="modules-home-view">-->
-    <!--<div class="module-header">-->
-        <!--<h1>My list</h1>-->
-        <!--<button ng-click="openDetail()">Go to detail</button>-->
-    <!--</div>-->
-<!--</div>-->
 <div class="loading" ng-show="!loaded">
     Loading.....
     <span class="ball1"></span>
@@ -16,12 +10,27 @@
                 <img class="flr-img flr-pointer media-object" ng-src="{{item.media.m}}">
             </a>
             <div class="media-body">
-                <h4 class="flr-truncate flr-pointer media-heading" ng-click="goToPost(item)">{{item.title}}</h4>
-                <p>Published: {{item.published | date:"MMM yyyy 'at' hh:mm"}}</p>
-                <ul class="list-inline list-unstyled">
-                    <li><a ng-href="{{getAuthorPage(item.author_id)}}" target="_blank">Author</a></li>
-                    <li><a ng-href="{{item.link}}" target="_blank">View on Flickr</a></li>
-                </ul>
+                <h4 class="flr-truncate flr-title flr-pointer media-heading" ng-click="goToPost(item)">{{item.title}}</h4>
+                <div class="flr-only-tablet-view flr-margin-left-large flr-margin-bottom-medium">
+                    <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                    Published: {{formatDate(item.published)}}
+                </div>
+                <div class="flr-flex-view">
+                    <div class="">
+                        <i class="fa fa-user"></i>
+                        <a ng-href="{{getAuthorPage(item.author_id)}}" target="_blank">{{item.author}}</a>
+                    </div>
+                    <div class="flr-only-desktop-view">
+                        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                        Published: {{formatDate(item.published)}}
+                    </div>
+                    <div>
+                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                        <a ng-href="{{item.link}}" target="_blank">
+                            View on Flickr
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
