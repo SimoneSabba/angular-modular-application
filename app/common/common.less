@@ -5,6 +5,13 @@
 @import (reference) "./styles/custom_variables.less";
 @import (reference) "../../libs/bootstrap/less/bootstrap.less";
 
+
+/* =======================================================================
+    Variables
+======================================================================= */
+
+@threshold-tablet-view: 800px;
+
 /* =======================================================================
     Base Elements
 ======================================================================= */
@@ -13,11 +20,101 @@ body {
     line-height: 20px;
 }
 
+// margin generator
+#genMarginTop (@size) {
+  margin-top: @size;
+}
+
+#genMarginBottom (@size) {
+  margin-bottom: @size;
+}
+
+#genMarginLeft (@size) {
+  margin-left: @size;
+}
+
+#genMarginRight (@size) {
+  margin-right: @size;
+}
+
+/* margin top */
+.flr-margin-top-small {
+  #genMarginTop(5px);
+}
+
+.flr-margin-top-medium {
+  #genMarginTop(10px);
+}
+
+.flr-margin-top-large {
+  #genMarginTop(15px);
+}
+
+/* margin bottom */
+.flr-margin-bottom-small {
+  #genMarginBottom(5px);
+}
+
+.flr-margin-bottom-medium {
+  #genMarginBottom(10px);
+}
+
+.flr-margin-bottom-large {
+  #genMarginBottom(15px);
+}
+
+/* margin left */
+.flr-margin-left-small {
+  #genMarginLeft(5px);
+}
+
+.flr-margin-left-medium {
+  #genMarginLeft(10px);
+}
+
+.flr-margin-left-large {
+  #genMarginLeft(15px);
+}
+
+/* margin right */
+.flr-margin-right-small {
+  #genMarginRight(5px);
+}
+
+.flr-margin-right-medium {
+  #genMarginRight(10px);
+}
+
+.flr-margin-right-large {
+  #genMarginRight(15px);
+}
+
+/* margin */
+.flr-margin-small {
+  .flr-margin-bottom-small;
+  .flr-margin-top-small;
+  .flr-margin-right-small;
+  .flr-margin-left-small;
+}
+
+.flr-margin-medium {
+  .flr-margin-bottom-medium;
+  .flr-margin-top-medium;
+  .flr-margin-right-medium;
+  .flr-margin-left-medium;
+}
+
+.flr-margin-large {
+  .flr-margin-bottom-large;
+  .flr-margin-top-large;
+  .flr-margin-right-large;
+  .flr-margin-left-large;
+}
 
 /* ==========================================================================
     Responsive classes
 ========================================================================== */
-@media screen and (max-width:800px){
+@media screen and (max-width:@threshold-tablet-view){
   .flr-only-desktop-view {
     display: none;
   }
@@ -27,7 +124,7 @@ body {
   }
 }
 
-@media screen and (min-width:800px){
+@media screen and (min-width:@threshold-tablet-view){
   .flr-only-desktop-view {
     display: visible;
   }

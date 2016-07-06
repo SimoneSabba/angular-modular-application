@@ -4,8 +4,8 @@ function HomeCtrl($scope, $state, $http, ServiceName, Utilities) {
 
     $scope.loaded = false;
     $scope.getAuthorPage = ServiceName.getAuthorPage;
-    $scope.formatDate = function(date){
-        return Utilities.formatDate(date)
+    $scope.formatDate = function(date) {
+        return Utilities.formatDate(date);
     };
 
     ServiceName.getData().then(function(list) {
