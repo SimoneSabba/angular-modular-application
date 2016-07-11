@@ -1,12 +1,12 @@
 'use strict';
 
-function HomeCtrl($scope, $state, $http, FlickrService, Utilities) {
+function ListCtrl($scope, $state, FlickrService, Utilities) {
 
     $scope.loaded = false;
     $scope.error = false;
     $scope.getAuthorPage = FlickrService.getAuthorPage;
     $scope.formatDate = function(date) {
-        return Utilities.formatDate(date)
+        return Utilities.formatDate(date);
     };
 
     var onSuccess = function(data) {
@@ -27,5 +27,5 @@ function HomeCtrl($scope, $state, $http, FlickrService, Utilities) {
     };
 }
 
-HomeCtrl.$inject = ['$scope', '$state', '$http', 'FlickrService', 'Utilities'];
-module.exports = HomeCtrl;
+ListCtrl.$inject = ['$scope', '$state', 'FlickrService', 'Utilities'];
+module.exports = ListCtrl;

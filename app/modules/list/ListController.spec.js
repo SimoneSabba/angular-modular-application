@@ -2,7 +2,7 @@
 
 'use strict';
 
-describe('HomeController', function() {
+describe('ListController', function() {
 
     var
         ctrl,
@@ -17,7 +17,7 @@ describe('HomeController', function() {
 
         angular.mock.inject(function($controller, $rootScope, $httpBackend, $http) {
             scope = $rootScope.$new();
-            ctrl = $controller('HomeCtrl', {
+            ctrl = $controller('ListCtrl', {
                 $scope: scope
             });
             _$httpBackend = $httpBackend;
