@@ -1,6 +1,6 @@
 # Angular modular application
 
-This is an example of a simple SPA developed using AngularJS. The app load a
+This is an example of a simple SPA developed using AngularJS. The app consume a JSON API and display simple data.
 
 ### Prerequisites
 In order to build and run the application, you need to have installed
