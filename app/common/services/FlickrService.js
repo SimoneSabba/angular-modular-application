@@ -27,7 +27,7 @@ var FlickrService = function($http, $q, CONSTANTS) {
     };
 
     this.getAuthorPage = function(authorId) {
-        return CONSTANTS.FLICKR_BASE_URL + authorId;
+        return authorId ? CONSTANTS.FLICKR_BASE_URL + authorId : null;
     };
 };
 
