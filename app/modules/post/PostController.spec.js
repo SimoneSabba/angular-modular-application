@@ -12,7 +12,7 @@ describe('HomeController', function() {
 
         angular.mock.inject(function($controller, $rootScope) {
             scope = $rootScope.$new();
-            ctrl = $controller('HomeCtrl', {
+            ctrl = $controller('ListCtrl', {
                 $scope: scope
             });
         });

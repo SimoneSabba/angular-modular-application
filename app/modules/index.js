@@ -2,7 +2,7 @@
 
 module.exports = angular.module('modules',
     [
-        require('./home').name,
+        require('./list').name,
         require('./post').name
     ])
     .controller('MainCtrl', require('./MainController'));

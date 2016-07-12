@@ -22,6 +22,5 @@ module.exports = angular.module('common',
         require('./elements/footer').name,
         require('./constants').name,
         require('./directives').name,
-        require('./resources').name,
         require('./services').name
     ]);
