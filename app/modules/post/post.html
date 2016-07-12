@@ -1,19 +1,18 @@
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <h1><a ng-href="{{item.link}}" target="_blank">{{item.title}}</a></h1>
-        </div>
-        <div class="col-md-4 text-right">
+    <div class="row text-right">
             <button type="button" class="btn btn-primary" ng-click="goBack()">
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
                 Back
             </button>
-            <!--<button ng-click="goBack()">Go back</button>-->
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-xs-18">
+            <h1><a ng-href="{{item.link}}" target="_blank">{{item.title}}</a></h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 col-xs-12">
             <ul class="list-inline">
                 <li>
                     <i class="fa fa-user" aria-hidden="true"></i>
@@ -37,7 +36,14 @@
             </div>
         </div>
     </div>
+    <div class = "row flr-margin-bottom-small">
+        <div class="col-md-12 col-xs-16">
+            Tags <span class="fa fa-tag"></span>
+        </div>
+    </div>
     <div class = "row">
-        <span class="label label-primary fa fa-tag" ng-repeat="tag in tags">{{tag}}</span>
+        <div class="col-md-12 col-xs-18">
+            <div class="label label-primary flr-tag flr-margin-right-small flr-margin-bottom-small pull-left" ng-repeat="tag in tags">{{tag}}</div>
+        </div>
     </div>
 </div>
