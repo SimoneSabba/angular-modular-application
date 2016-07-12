@@ -9,7 +9,7 @@ In order to build and run the application, you need to have installed
 
 2) Gulp ```npm install -g gulp```
 
-3) Bower ```npm bower -g gulp```
+3) Bower ```npm install -g bower```
 
 ### Setup instruction
 1) Install node modules and bower components ```npm install```
