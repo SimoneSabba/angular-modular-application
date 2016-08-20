@@ -1,7 +1,8 @@
 'use strict';
 
 var FlickrService = function($http, $q, CONSTANTS) {
-    this.item = null;
+    this.selectedImages = [];
+
     var data = {
             method: 'JSONP',
             url: CONSTANTS.FLICKR_API_URL,
@@ -18,17 +19,23 @@ var FlickrService = function($http, $q, CONSTANTS) {
         return defer.promise;
     };
 
-    this.setItem = function(item) {
-        this.item = item;
-    };
+    this.selectImage = function(image) {
+        this.selectedImages.push(image);
+    }
 
-    this.getItem = function() {
-        return this.item;
-    };
+    this.unselectImage = function(image) {
+        var index = this.selectedImages.indexOf(image);
+        this.selectedImages.splice(index, 1);
+    }
 
-    this.getAuthorPage = function(authorId) {
-        return authorId ? CONSTANTS.FLICKR_BASE_URL + authorId : null;
-    };
+    this.isSelectedImage = function(image) {
+        return this.selectedImages.indexOf(image) !== -1;
+    }
+
+    this.getSelectedImages = function() {
+        return this.selectedImages;
+    }
+
 };
 
 FlickrService.$inject = ['$http', '$q', 'CONSTANTS'];

@@ -4,31 +4,24 @@
     <span class="ball2"></span>
 </div>
 <div ng-show="loaded" class="container">
-    <div class="well" ng-repeat="item in list.items track by $index">
-        <div class="media">
-            <a class="pull-left">
-                <img class="flr-img flr-pointer media-object" ng-src="{{item.media.m}}">
-            </a>
-            <div class="media-body">
-                <h4 class="flr-truncate flr-title flr-pointer media-heading">{{item.title}}</h4>
-                
-                <div class="flr-flex-view">
-                    <div class="">
-                        <i class="fa fa-user"></i>
-                        <a ng-href="{{getAuthorPage(item.author_id)}}" target="_blank">{{item.author}}</a>
-                    </div>
-                    <div class="flr-only-desktop-view">
-                        <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                        Published: {{formatDate(item.published)}}
-                    </div>
-                    <div>
-                        <i class="fa fa-external-link" aria-hidden="true"></i>
-                        <a ng-href="{{item.link}}" target="_blank">
-                            View on Flickr
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+<div class="row">
+  <div id="small-img" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center">
+    <ul class="flr-list">
+      <li 
+        class="flr-list-element flr-margin-bottom-large"
+        ng-repeat="item in list.items track by $index">
+            <img
+                ng-src="{{item.media.m}}" 
+                class="flr-img"
+                alt="{{item.title}}"
+                ng-click=selectImage(item)
+                ng-class = "{'flr-selected' : item.selected}"
+             />
+      </li>
+      
+    </ul>
+  </div>
+</div>
+    
 </div>
