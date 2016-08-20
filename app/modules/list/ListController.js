@@ -2,14 +2,16 @@
 
 function ListCtrl($scope, $state, FlickrService, localStorageService) {
 
-    $scope.loaded = false;
-    $scope.error = false;
-    $scope.selectedImages = [];
+    var init = function() {
+        $scope.loaded = false;
+        $scope.error = false;
+        $scope.selectedImages = [];
+        FlickrService.getData().then(onSuccess, onError);    
+    };
 
     var onSuccess = function(data) {
         $scope.list = data;
-        console.log($scope.list.items);
-        init();
+        initFromLocalStorage();
         $scope.loaded = true;
     };
 
@@ -22,15 +24,15 @@ function ListCtrl($scope, $state, FlickrService, localStorageService) {
         FlickrService.selectImage(image);
         image.selected = true;
         localStorageService.set(image.link, image);
-    }
+    };
 
     var unselectImage = function(image) {
         FlickrService.unselectImage(image);
         localStorageService.remove(image.link);
         image.selected = false;
-    }
+    };
 
-    var init = function() {
+    var initFromLocalStorage = function() {
         if (localStorageService.isSupported) {
             var 
                 keys = localStorageService.keys(),
@@ -47,10 +49,7 @@ function ListCtrl($scope, $state, FlickrService, localStorageService) {
                 }
             }
         }
-    }
-
-
-    FlickrService.getData().then(onSuccess, onError);
+    };    
 
     $scope.onClickImage = function(image) {
         if (FlickrService.isSelectedImage(image)) {
@@ -58,7 +57,10 @@ function ListCtrl($scope, $state, FlickrService, localStorageService) {
         } else {
             selectImage(image);
         }
-    }
+    };
+    
+
+    init();
 
 
 }

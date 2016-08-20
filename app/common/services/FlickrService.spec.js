@@ -4,7 +4,9 @@
 
 describe('FlickrService ', function() {
 
-    var flickrService;
+    var 
+        flickrService,
+        fakeImageObj = {image: 'link'};
 
     beforeEach(angular.mock.module('myApp'));
 
@@ -16,14 +18,22 @@ describe('FlickrService ', function() {
 
     });
 
-    it('should contain get and set method', function() {
-        expect(flickrService.get).to.be.function;
-        expect(flickrService.set).to.be.function;
+    it('should store a selected image', function() {
+        expect(flickrService.getSelectedImages().length).to.equal(0);
+        flickrService.selectImage(fakeImageObj);
+        expect(flickrService.getSelectedImages().length).to.equal(1);
+        expect(flickrService.isSelectedImage(fakeImageObj)).to.be.true;
+
     });
 
-    it('should return the author page url', function() {
-        expect(flickrService.getAuthorPage('author_id')).to.be.equal('https://www.flickr.com/author_id');
-        expect(flickrService.getAuthorPage()).to.be.null;
+    it('should unselecte an image', function() {
+        flickrService.selectImage(fakeImageObj);
+        expect(flickrService.getSelectedImages().length).to.equal(1);
+        expect(flickrService.isSelectedImage(fakeImageObj)).to.be.true;
+        flickrService.unselectImage(fakeImageObj);
+        expect(flickrService.getSelectedImages().length).to.equal(0);
+        expect(flickrService.isSelectedImage(fakeImageObj)).to.be.false;
+
     });
 
 });
