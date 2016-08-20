@@ -36,6 +36,10 @@ var FlickrService = function($http, $q, CONSTANTS) {
         return this.selectedImages;
     }
 
+    this.SetSelectedImages = function(selectedImages) {
+        this.selectedImages = selectedImages;
+    }
+
 };
 
 FlickrService.$inject = ['$http', '$q', 'CONSTANTS'];

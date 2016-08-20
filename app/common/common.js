@@ -7,6 +7,7 @@ require('angular-animate');
 require('angular-cookies');
 require('angular-resource');
 require('angular-sanitize');
+require('angular-local-storage');
 require('domready/ready');
 require('lodash');
 
@@ -18,6 +19,7 @@ module.exports = angular.module('common',
         'ngCookies',
         'ngResource',
         'ngSanitize',
+        'LocalStorageModule',
         require('./elements/header').name,
         require('./elements/footer').name,
         require('./constants').name,
