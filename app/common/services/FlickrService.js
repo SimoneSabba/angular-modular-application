@@ -4,7 +4,7 @@ var FlickrService = function($http, $q, CONSTANTS) {
     this.item = null;
     var data = {
             method: 'JSONP',
-            url: CONSTANTS.FLICKR_API_URL + '&jsoncallback=JSON_CALLBACK',
+            url: CONSTANTS.FLICKR_API_URL,
             cache: true
         };
 

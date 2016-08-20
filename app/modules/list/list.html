@@ -6,15 +6,12 @@
 <div ng-show="loaded" class="container">
     <div class="well" ng-repeat="item in list.items track by $index">
         <div class="media">
-            <a class="pull-left" ng-click="goToPost(item)" >
+            <a class="pull-left">
                 <img class="flr-img flr-pointer media-object" ng-src="{{item.media.m}}">
             </a>
             <div class="media-body">
-                <h4 class="flr-truncate flr-title flr-pointer media-heading" ng-click="goToPost(item)">{{item.title}}</h4>
-                <div class="flr-only-tablet-view flr-margin-left-large flr-margin-bottom-medium">
-                    <i class="fa fa-calendar-o" aria-hidden="true"></i>
-                    Published: {{formatDate(item.published)}}
-                </div>
+                <h4 class="flr-truncate flr-title flr-pointer media-heading">{{item.title}}</h4>
+                
                 <div class="flr-flex-view">
                     <div class="">
                         <i class="fa fa-user"></i>

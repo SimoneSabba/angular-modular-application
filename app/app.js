@@ -8,5 +8,4 @@ module.exports = angular.module('myApp',
         require('./modules').name
     ])
     .config(require('./appConfig'))
-    .constant('version', require('../package.json').version)
     .run(require('./common/common-init.js'));

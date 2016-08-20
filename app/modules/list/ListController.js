@@ -1,13 +1,9 @@
 'use strict';
 
-function ListCtrl($scope, $state, FlickrService, Utilities) {
+function ListCtrl($scope, $state, FlickrService) {
 
     $scope.loaded = false;
     $scope.error = false;
-    $scope.getAuthorPage = FlickrService.getAuthorPage;
-    $scope.formatDate = function(date) {
-        return Utilities.formatDate(date);
-    };
 
     var onSuccess = function(data) {
         $scope.list = data;
@@ -21,11 +17,7 @@ function ListCtrl($scope, $state, FlickrService, Utilities) {
 
     FlickrService.getData().then(onSuccess, onError);
 
-    $scope.goToPost = function(item) {
-        FlickrService.setItem(item);
-        $state.go('post');
-    };
 }
 
-ListCtrl.$inject = ['$scope', '$state', 'FlickrService', 'Utilities'];
+ListCtrl.$inject = ['$scope', '$state', 'FlickrService'];
 module.exports = ListCtrl;
